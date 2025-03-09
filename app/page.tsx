@@ -1,4 +1,6 @@
+'use client';
 import TopBar from '@/components/TopBar';
+import CTA from '@/components/Cta';
 import { Button } from '@/components/ui/button';
 import {
   Card,
@@ -22,8 +24,9 @@ import {
   Star,
   Check,
 } from 'lucide-react';
+import Image from 'next/image';
 
-export default function LandingPage() {
+export default function Home() {
   return (
     <div className="mb-10">
       <TopBar />
@@ -31,7 +34,7 @@ export default function LandingPage() {
         {/* Hero */}
         <section className="mx-auto px-4 flex flex-col gap-5 items-center">
           <div className="flex flex-col gap-4">
-            <h1 className="text-3xl font-bold text-center">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center">
               Estude de forma{' '}
               <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                 inteligente e personalizada
@@ -60,76 +63,78 @@ export default function LandingPage() {
             Tudo o que você precisa para{' '}
             <span className="text-primary">acelerar seu aprendizado!</span>
           </h1>
-          <Card className="gap-4">
-            <CardHeader>
-              <BookOpenText
-                color="#fff"
-                size={42}
-                className="bg-primary p-1 rounded-full"
-              />
-            </CardHeader>
-            <CardContent>
-              <p className="text-lg font-semibold text-center">
-                Gerador de Questões
-              </p>
-              <p className="text-center text-gray-500">
-                Questões personalizadas baseadas no seu nível e contexto
-              </p>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader>
-              <Youtube
-                color="#fff"
-                size={42}
-                className="bg-primary p-1 rounded-full"
-              />
-            </CardHeader>
-            <CardContent>
-              <p className="text-lg font-semibold text-center">
-                Questões de Vídeoaulas
-              </p>
-              <p className="text-center text-gray-500">
-                Envie o link de uma videoaula e receba questões baseadas no
-                conteúdo apresentado.
-              </p>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader>
-              <ChartLine
-                color="#fff"
-                size={42}
-                className="bg-primary p-1 rounded-full"
-              />
-            </CardHeader>
-            <CardContent>
-              <p className="text-lg font-semibold text-center">
-                Tracker de Desempenho
-              </p>
-              <p className="text-center text-gray-500">
-                Monitore seu progresso e identifique pontos de melhoria
-              </p>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader>
-              <Brain
-                color="#fff"
-                size={42}
-                className="bg-primary p-1 rounded-full"
-              />
-            </CardHeader>
-            <CardContent>
-              <p className="text-lg font-semibold text-center">
-                Correção de Redações por IA
-              </p>
-              <p className="text-center text-gray-500">
-                Avaliação automática de redações com 90% de precisão para
-                identificar melhorias.
-              </p>
-            </CardContent>
-          </Card>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  gap-4 w-full max-w-6xl mx-auto">
+            <Card className="w-full min-w-[250px] max-w-[310px] h-[250px] mx-auto sm:mx-0">
+              <CardHeader>
+                <BookOpenText
+                  color="#fff"
+                  size={42}
+                  className="bg-primary p-1 rounded-full"
+                />
+              </CardHeader>
+              <CardContent>
+                <p className="text-lg font-semibold text-center">
+                  Gerador de Questões
+                </p>
+                <p className="text-center text-gray-500">
+                  Questões personalizadas baseadas no seu nível e contexto
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="w-full min-w-[250px] max-w-[310px] h-[250px] mx-auto sm:mx-0">
+              <CardHeader>
+                <Youtube
+                  color="#fff"
+                  size={42}
+                  className="bg-primary p-1 rounded-full"
+                />
+              </CardHeader>
+              <CardContent>
+                <p className="text-lg font-semibold text-center">
+                  Questões de Vídeoaulas
+                </p>
+                <p className="text-center text-gray-500">
+                  Envie o link de uma videoaula e receba questões baseadas no
+                  conteúdo apresentado.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="w-full min-w-[250px] max-w-[310px] h-[250px] mx-auto sm:mx-0">
+              <CardHeader>
+                <ChartLine
+                  color="#fff"
+                  size={42}
+                  className="bg-primary p-1 rounded-full"
+                />
+              </CardHeader>
+              <CardContent>
+                <p className="text-lg font-semibold text-center">
+                  Tracker de Desempenho
+                </p>
+                <p className="text-center text-gray-500">
+                  Monitore seu progresso e identifique pontos de melhoria
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="w-full min-w-[250px] max-w-[310px] h-[250px] mx-auto sm:mx-0">
+              <CardHeader>
+                <Brain
+                  color="#fff"
+                  size={42}
+                  className="bg-primary p-1 rounded-full"
+                />
+              </CardHeader>
+              <CardContent>
+                <p className="text-lg font-semibold text-center">
+                  Correção de Redações por IA
+                </p>
+                <p className="text-center text-gray-500">
+                  Avaliação automática de redações com 90% de precisão para
+                  identificar melhorias.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
         </section>
 
         {/* Depoimentos */}
@@ -146,8 +151,8 @@ export default function LandingPage() {
               com o AcertaAí.
             </p>
           </div>
-          <div className="grid grid-col sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            <Card className="gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <Card className="gap-4 w-full max-w-sm mx-auto">
               <CardHeader className="flex flex-row gap-1">
                 <Star color="#FF4C00" fill="#FF4C00" size={24} />
                 <Star color="#FF4C00" fill="#FF4C00" size={24} />
@@ -165,10 +170,12 @@ export default function LandingPage() {
               </CardContent>
               <CardFooter>
                 <div className="flex flex-row gap-2 items-center">
-                  <img
+                  <Image
                     className="w-10 h-10 rounded-full"
                     src="https://images.unsplash.com/photo-1499714608240-22fc6ad53fb2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80"
                     alt=""
+                    width={40}
+                    height={40}
                   />
                   <div>
                     <p className="font-semibold">João Silva</p>
@@ -177,7 +184,7 @@ export default function LandingPage() {
                 </div>
               </CardFooter>
             </Card>
-            <Card className="gap-4">
+            <Card className="gap-4 w-full max-w-sm mx-auto">
               <CardHeader className="flex flex-row gap-1">
                 <Star color="#FF4C00" fill="#FF4C00" size={24} />
                 <Star color="#FF4C00" fill="#FF4C00" size={24} />
@@ -194,10 +201,12 @@ export default function LandingPage() {
               </CardContent>
               <CardFooter>
                 <div className="flex flex-row gap-2 items-center">
-                  <img
+                  <Image
                     className="w-10 h-10 rounded-full"
                     src="https://images.unsplash.com/photo-1499714608240-22fc6ad53fb2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80"
                     alt=""
+                    width={40}
+                    height={40}
                   />
                   <div>
                     <p className="font-semibold">Carlos Eduardo</p>
@@ -206,7 +215,7 @@ export default function LandingPage() {
                 </div>
               </CardFooter>
             </Card>
-            <Card className="gap-4">
+            <Card className="gap-4 w-full max-w-sm mx-auto">
               <CardHeader className="flex flex-row gap-1">
                 <Star color="#FF4C00" fill="#FF4C00" size={24} />
                 <Star color="#FF4C00" fill="#FF4C00" size={24} />
@@ -223,10 +232,12 @@ export default function LandingPage() {
               </CardContent>
               <CardFooter>
                 <div className="flex flex-row gap-2 items-center">
-                  <img
+                  <Image
                     className="w-10 h-10 rounded-full"
                     src="https://images.unsplash.com/photo-1499714608240-22fc6ad53fb2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80"
                     alt=""
+                    width={40}
+                    height={40}
                   />
                   <div>
                     <p className="font-semibold">Gabriela Martins</p>
@@ -264,33 +275,35 @@ export default function LandingPage() {
               <CardContent>
                 <p className="text-2xl font-bold mb-4">Gratuito</p>
                 <div className="flex flex-col gap-2">
-                  <p className="flex items-center gap-2 ">
+                  <p className="flex items-center gap-2">
                     <Check color="green" />
                     Gerador de questões básicas
                   </p>
-                  <p className="flex items-center gap-2 ">
+                  <p className="flex items-center gap-2">
                     <Check color="green" />
                     Resumo e anotações
                   </p>
-                  <p className="flex items-center gap-2 ">
+                  <p className="flex items-center gap-2">
                     <Check color="green" />
                     Questões baseadas em vídeos do YouTube
                   </p>
-                  <p className="flex items-center gap-2 ">
+                  <p className="flex items-center gap-2">
                     <Check color="#d9d9d9" />
-                    <p className="text-gray-500">Correção de redações</p>
+                    <span className="text-gray-500">Correção de redações</span>
                   </p>
-                  <p className="flex items-center gap-2 ">
+                  <p className="flex items-center gap-2">
                     <Check color="#d9d9d9" />
-                    <p className="text-gray-500">Tracker de desempenho</p>
+                    <span className="text-gray-500">Tracker de desempenho</span>
                   </p>
-                  <p className="flex items-center gap-2 ">
+                  <p className="flex items-center gap-2">
                     <Check color="#d9d9d9" />
-                    <p className="text-gray-500">Gamificação</p>
+                    <span className="text-gray-500">Gamificação</span>
                   </p>
-                  <p className="flex items-center gap-2 ">
+                  <p className="flex items-center gap-2">
                     <Check color="#d9d9d9" />
-                    <p className="text-gray-500">Cronogramas personalizados</p>
+                    <span className="text-gray-500">
+                      Cronogramas personalizados
+                    </span>
                   </p>
                 </div>
               </CardContent>
@@ -324,19 +337,21 @@ export default function LandingPage() {
                   </p>
                   <p className="flex items-center gap-2 text-white">
                     <Check color="green" />
-                    <p className="">Correção de redações</p>
+                    <span>Correção de redações</span>
                   </p>
                   <p className="flex items-center gap-2 text-white">
                     <Check color="green" />
-                    <p className="">Tracker de desempenho</p>
+                    <span>Tracker de desempenho</span>
                   </p>
                   <p className="flex items-center gap-2 text-white">
                     <Check color="green" />
-                    <p className="">Gamificação</p>
+                    <span>Gamificação</span>
                   </p>
                   <p className="flex items-center gap-2 text-white">
                     <Check color="#d9d9d9" />
-                    <p className="text-gray-300">Cronogramas personalizados</p>
+                    <span className="text-gray-300">
+                      Cronogramas personalizados
+                    </span>
                   </p>
                 </div>
               </CardContent>
@@ -372,19 +387,19 @@ export default function LandingPage() {
                   </p>
                   <p className="flex items-center gap-2">
                     <Check color="green" />
-                    <p className="">Correção de redações</p>
+                    <span>Correção de redações</span>
                   </p>
                   <p className="flex items-center gap-2">
                     <Check color="green" />
-                    <p className="">Tracker de desempenho</p>
+                    <span>Tracker de desempenho</span>
                   </p>
                   <p className="flex items-center gap-2">
                     <Check color="green" />
-                    <p className="">Gamificação</p>
+                    <span>Gamificação</span>
                   </p>
                   <p className="flex items-center gap-2">
                     <Check color="green" />
-                    <p>Cronogramas personalizados</p>
+                    <span>Cronogramas personalizados</span>
                   </p>
                 </div>
               </CardContent>
@@ -474,27 +489,8 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <section className="mx-auto px-4 flex flex-col gap-5 items-center">
-          <div className="card flex flex-col items-center bg-tertiary rounded-2xl p-8">
-            <p className="font-bold px-3 py-2 bg-primary text-white rounded-full">
-              Comece agora mesmo
-            </p>
-            <h2 className="text-3xl tracking-tight text-balance md:text-4xl font-bold text-white ">
-              Transforme sua forma de estudar com o AcertaAí
-            </h2>
-            <p className="text-gray-200 my-4">
-              Junte-se a milhares de estudantes que já estão aproveitando o
-              poder da inteligência artificial para potencializar seus estudos.
-            </p>
-            <div>
-              <Button className="bg-white text-primary mb-2">
-                Começar Gratuitamente
-              </Button>
-              <Button variant="outline" className="text-white border-white">
-                Ver Demostrac§o
-              </Button>
-            </div>
-          </div>
+        <section>
+          <CTA />
         </section>
       </main>
 

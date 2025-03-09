@@ -5,3 +5,34 @@
   --color-secondary: #ffd174;
   --color-tertiary: #ff5700;
 }
+
+/* No seu CSS global */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-soft {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 2500ms ease-in-out infinite;
+  }
+
+  .animate-pulse-soft {
+    animation: pulse-soft 2500ms ease-in-out infinite;
+  }
+}
