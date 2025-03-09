@@ -23,6 +23,7 @@ import {
   Youtube,
   Star,
   Check,
+  LogIn,
 } from 'lucide-react';
 import Image from 'next/image';
 
@@ -47,8 +48,13 @@ export default function Home() {
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-2">
-            <Button className="text-white">Começar Gratuitamente</Button>
-            <Button variant="outline" className="border-primary text-primary">
+            <Button className="text-white sm:w-[250px]">
+              Começar Gratuitamente <LogIn />
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-primary text-primary">
               Conhecer Planos
             </Button>
           </div>
@@ -152,7 +158,7 @@ export default function Home() {
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            <Card className="gap-4 w-full max-w-sm mx-auto">
+            <Card className="gap-4 w-full min-w-[250px] max-w-[310px] justify-between mx-auto">
               <CardHeader className="flex flex-row gap-1">
                 <Star color="#FF4C00" fill="#FF4C00" size={24} />
                 <Star color="#FF4C00" fill="#FF4C00" size={24} />
@@ -184,7 +190,7 @@ export default function Home() {
                 </div>
               </CardFooter>
             </Card>
-            <Card className="gap-4 w-full max-w-sm mx-auto">
+            <Card className="gap-4 w-full min-w-[250px] max-w-[310px] justify-between mx-auto">
               <CardHeader className="flex flex-row gap-1">
                 <Star color="#FF4C00" fill="#FF4C00" size={24} />
                 <Star color="#FF4C00" fill="#FF4C00" size={24} />
@@ -215,7 +221,7 @@ export default function Home() {
                 </div>
               </CardFooter>
             </Card>
-            <Card className="gap-4 w-full max-w-sm mx-auto">
+            <Card className="gap-4 w-full min-w-[250px] max-w-[310px] justify-between mx-auto">
               <CardHeader className="flex flex-row gap-1">
                 <Star color="#FF4C00" fill="#FF4C00" size={24} />
                 <Star color="#FF4C00" fill="#FF4C00" size={24} />
@@ -414,7 +420,7 @@ export default function Home() {
 
         {/* FAQ */}
         <section className="mx-auto px-4 flex flex-col gap-5 items-center">
-          <div className="mx-auto text-center">
+          <div className="mx-auto w-full text-center">
             <p className="bg-primary inline text-white rounded-full px-4 py-1 uppercase tracking-wider">
               FAQ
             </p>
@@ -424,10 +430,10 @@ export default function Home() {
             <p className="text-gray-500">
               Encontre respostas para as perguntas mais comuns sobre o AcertaAí.
             </p>
-            <div className="mx-auto ">
-              <Accordion type="single" collapsible>
+            <div className="mx-auto w-full max-w-[503px]">
+              <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="item-1">
-                  <AccordionTrigger>
+                  <AccordionTrigger className="w-full">
                     Como o AcertaAí gera questões personalizadas?
                   </AccordionTrigger>
                   <AccordionContent>
@@ -494,9 +500,9 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="py-12">
+      <footer className="py-12 ">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 border-t border-border pt-6">
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
                 <div className="w-8 h-8 rounded-xl bg-primary flex items-center justify-center text-white font-bold text-sm">

@@ -21,10 +21,16 @@ export default function TopBar() {
         </div>
         <div>
           <nav className="hidden sm:inline">
-            <ul className="flex gap-8 ">
-              <li>Funcionalidades</li>
-              <li>Planos</li>
-              <li>FAQ</li>
+            <ul className="flex gap-8">
+              <li className="cursor-pointer hover:text-primary transition-all duration-500 transform hover:translate-y-1.5">
+                Funcionalidades
+              </li>
+              <li className="cursor-pointer hover:text-primary transition-all duration-500 transform hover:translate-y-1.5">
+                Planos
+              </li>
+              <li className="cursor-pointer hover:text-primary transition-all duration-500 transform hover:translate-y-1.5">
+                FAQ
+              </li>
             </ul>
           </nav>
         </div>
