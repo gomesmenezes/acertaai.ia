@@ -1,0 +1,15 @@
+{
+    "htmlWhitespaceSensitivity": "ignore",
+    "semi": true,
+    "embeddedLanguageFormatting": "off",
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "printWidth": 80,
+    "tabWidth": 2,
+    "arrowParens": "always",
+    "endOfLine": "lf",
+    "bracketSameLine": true,
+    "jsxSingleQuote": false,
+    "requirePragma": false,
+    "bracketSpacing": true
+}
